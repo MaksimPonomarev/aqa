@@ -19,7 +19,7 @@ while True:
     moves = input("Введи любимый фильм: ")
     list_mov.append(moves)
     count = count + 1
-    if count == 3:
+    if count == 5:
         break
     else:
         print(f"Фильм {count} из 5")
@@ -35,3 +35,10 @@ for index, move in enumerate(reversed(list_mov)):
         max_word.append(f"{index + 1}. {move}")
 
 print("Самое длинное слово:", *max_word)
+
+answer = input("Хочешь найти какой то фильм, который ты присал? ")
+if answer == "да":
+    film = input("какой фильм хочешь найти? ")
+    for index, mov in enumerate(list_mov):
+        if mov == film:
+            print(f"Вот твой фильм: {film}, он под номером {index + 1}")
