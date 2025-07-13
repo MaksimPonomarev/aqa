@@ -23,7 +23,7 @@ while True:
         print(f"Фильм {count} из 5")
 
 for move in range(len(list_mov)):
-    print(f"{move}. {list_mov[move]}")
+    print(f"{move + 1}. {list_mov[move]}")
 
 for index, move in enumerate(list_mov):
-    print(f"{index}. {move}")
+    print(f"{index + 1}. {move}")
