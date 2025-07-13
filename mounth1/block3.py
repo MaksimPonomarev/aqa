@@ -8,13 +8,13 @@ while True:
 
 bmi = weight / (height ** 2)
 
-print(f"Ваш ИМТ: {bmi}")
+print(f"Ваш ИМТ: {round(bmi, 2)}")
 
 if bmi < 18.5:
     print("Недовес")
-if bmi >= 18.5 and bmi <= 24.9:
+elif bmi >= 18.5 and bmi <= 24.9:
     print("Нормальный вес")
-if bmi >= 25 and bmi <= 29.9:
+elif bmi >= 25 and bmi <= 29.9:
     print("Избыточный вес")
-if bmi > 30:
+else:
     print("Ожирение")
