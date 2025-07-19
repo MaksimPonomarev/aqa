@@ -54,32 +54,32 @@ from functools import reduce
 # print(apply(lambda x: x**2, 3,4,5,6,7))
 
 
-
-# sort_by_length = lambda words, x:sorted(words, key=None, reverse = x)
+# def sort_by_lenght(words, reverse=False):
+#     return sorted(words, key=lambda x: len(x), reverse=reverse)
+#
+#
 # a = ['efwfewf','12erfwsvc','1232222222222222222222222222222222222222222dfs','1','12','123']
-# x = True
-# print(sort_by_length(a,x))
+# print(sort_by_lenght(a))
 #
-# p.s "в этой задаче не понял, что ты от меня хочешь, решил так."
+#
 
 
 
-# def make_counter():
-#     count = 0
-#
-#     def counter():
-#         nonlocal count
-#         count += 1
-#
-#     counter()
-#     counter()
-#     counter()
-#     counter()
-#     counter()
-#     return count
-#
-# print(make_counter())
 
+def make_counter():
+    count = 0
+
+    def counter():
+        nonlocal count
+        count += 1
+        return count
+
+    return counter
+
+
+a = make_counter()
+for i in range(5):
+    print(a())
 #
 # def factorial(n):
 #     if n <= 1:
@@ -100,19 +100,19 @@ from functools import reduce
 #
 # print(factorial_v_2(5))
 #
-def fibo(n, a=0,b=1):
-    while True:
-        c = a + b
-        yield a+b
-        a = b
-        b = c
-        n -= 1
-        if n == 0:
-            break
-
-n = int(input("До какого чилса? "))
-for i in fibo(n):
-    print(i)
+# def fibo(n, a=0,b=1):
+#     while True:
+#         c = a + b
+#         yield a+b
+#         a = b
+#         b = c
+#         n -= 1
+#         if n == 0:
+#             break
+#
+# n = int(input("До какого чилса? "))
+# for i in fibo(n):
+#     print(i)
 
 
 
