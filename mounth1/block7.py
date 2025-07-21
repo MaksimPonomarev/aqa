@@ -160,4 +160,4 @@ try:
     p.discount = 150
 
 except ValueError as e:
-    print("Пупупу")
+    print(f"Ошибка: {e}")
