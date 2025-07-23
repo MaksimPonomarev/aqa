@@ -50,7 +50,9 @@ from datetime import datetime
 
 
 
-file_a = "C:/Users/mr/Desktop/test.txt"
+file_1 = "C:/Users/mr/Desktop/test1.txt"
+file_2 = "C:/Users/mr/Desktop/test2.txt"
+file_3 = "C:/Users/mr/Desktop/test3.txt"
 
 # def read_file(file):
 #     try:
@@ -156,41 +158,61 @@ file_a = "C:/Users/mr/Desktop/test.txt"
 #
 # search_lines_by_keyword(file_a, "Первая")
 
-def analyze_text_status(file_patch):
-    try:
-        with open(file_patch, "r", encoding="utf-8") as f:
-            text = f.read()
-            line = text.splitlines()
-            total_chars = 0
-            chars_with_space = 0
-            list_words = []
-            dict = {}
-            for row in line:
-                total_chars += len(row)
-                chars_with_space += len(row.replace(" ", ""))
-                clear_text = row.replace("."," ").replace(","," ")
-                peremennaya = clear_text.lower().split()
-                list_words += peremennaya
-                for char in row:
-                    if char.isalpha():
-                        char = char.lower()
-                        if char in dict:
-                            dict[char] += 1
-                        else:
-                            dict[char] = 1
+# def analyze_text_status(file_patch):
+#     try:
+#         with open(file_patch, "r", encoding="utf-8") as f:
+#             text = f.read()
+#             line = text.splitlines()
+#             total_chars = 0
+#             chars_with_space = 0
+#             list_words = []
+#             dict = {}
+#             for row in line:
+#                 total_chars += len(row)
+#                 chars_with_space += len(row.replace(" ", ""))
+#                 clear_text = row.replace("."," ").replace(","," ")
+#                 peremennaya = clear_text.lower().split()
+#                 list_words += peremennaya
+#                 for char in row:
+#                     if char.isalpha():
+#                         char = char.lower()
+#                         if char in dict:
+#                             dict[char] += 1
+#                         else:
+#                             dict[char] = 1
+#
+#
+#
+#
+#
+#             print(f"Общее количество символов: {total_chars}")
+#             print(f"Общее количество символов без пробелов {chars_with_space}")
+#             print(f"Количество слов: {len(list_words)}")
+#             print(f"Количество каждой буквы: {dict}")
+#
+#     except FileNotFoundError:
+#         print("Файл не найден, проверьте путь к файлу")
+#     except PermissionError:
+#         print("Нет прав на чтение файла.")
+#
+# analyze_text_status(file_a)
 
 
+# def merge_files(file1_path, file2_path, output_path):
+#     try:
+#         with open(file1_path, "r", encoding="utf-8") as f1, \
+#              open(file2_path, "r", encoding="utf-8") as f2, \
+#              open(output_path, "w", encoding="utf-8") as f3:
+#
+#             f3.writelines(f1.readlines())
+#             f3.writelines(f2.readlines())
+#
+#
+#     except FileNotFoundError:
+#         print("Файл не найден, проверьте путь к файлу")
+#     except PermissionError:
+#         print("Нет прав на чтение файла.")
+#
+# merge_files(file_1, file_2, file_3)
 
 
-
-            print(f"Общее количество символов: {total_chars}")
-            print(f"Общее количество символов без пробелов {chars_with_space}")
-            print(f"Количество слов: {len(list_words)}")
-            print(f"Количество каждой буквы: {dict}")
-
-    except FileNotFoundError:
-        print("Файл не найден, проверьте путь к файлу")
-    except PermissionError:
-        print("Нет прав на чтение файла.")
-
-analyze_text_status(file_a)
