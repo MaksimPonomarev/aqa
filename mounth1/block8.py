@@ -216,3 +216,65 @@ file_3 = "C:/Users/mr/Desktop/test3.txt"
 # merge_files(file_1, file_2, file_3)
 
 
+# def file_comparison(file1_path, file2_path):
+#     count = 0
+#     last_str = []
+#     num_of_mis_lines = 0
+#     num_of_non_match_lines = {}
+#     try:
+#         with open(file1_path, "r", encoding="utf-8") as f1, \
+#              open(file2_path, "r", encoding="utf-8") as f2:
+#
+#
+#             while True:
+#                 text1 = f1.readline().lower().strip("., !@#$%^&*()_+").splitlines()
+#                 text2 = f2.readline().lower().strip("., !@#$%^&*()_+").splitlines()
+#                 count += 1
+#
+#                 #остаток строк
+#                 if text1 == [] and text2 == []:
+#                     break
+#                 elif text1 == []:
+#                     last_str.append(text2)
+#                     per_file = 1
+#
+#                 elif text2 == []:
+#                     last_str.append(text1)
+#                     per_file = 2
+#
+#                 #сравнние строк
+#                 elif text1 != text2:
+#                     num_of_mis_lines += 1
+#                     num_of_non_match_lines[count] = (text1, text2)
+#
+#
+#             #вывод значений в принт без скобок
+#             str_keys_a = ", ".join(str(key) for key in list(num_of_non_match_lines.keys()))
+#             result = []
+#             for elem in last_str:
+#                 result_str = elem[0]
+#                 result.append(result_str)
+#
+#             result_a = ", | ".join(result)
+#
+#
+#
+#             print(f"Количество не совпадающих строк: {num_of_mis_lines}")
+#             print(f"Номера строк, в которых содержимое отличается: {str_keys_a}")
+#             for val in list(num_of_non_match_lines.values()):
+#                 first_str = ", ".join(val[0])
+#                 second_str = ", ".join(val[1])
+#                 print(f"Строка из файла 1: {first_str} | Cтрока из файла 2: {second_str}")
+#             print(f"Остаток строк от файл №{per_file}: {result_a}")
+#
+#
+#
+#     except FileNotFoundError:
+#         print("Файл не найден, проверьте путь к файлу")
+#     except PermissionError:
+#         print("Нет прав на чтение файла.")
+#
+# file_comparison(file_1, file_2)
+
+
+
