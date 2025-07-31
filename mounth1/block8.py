@@ -1,4 +1,5 @@
 from datetime import datetime
+import json
 
 # try:
 #     a = int(input("Числоа а: "))
@@ -278,26 +279,61 @@ file_3 = "C:/Users/mr/Desktop/test3.txt"
 
 
 
-def filter_lines_to_new_file(file_path, keyword,output_path):
-    try:
-        with open(file_path, "r", encoding="utf-8") as f1, \
-            open(output_path, "w", encoding="utf-8") as f2:
-
-            #чтение и обработка первого файла
-            while True:
-                string_of_text = f1.readline()
-
-                if keyword.lower() in string_of_text.lower():
-                    #запись во второй файл
-                    f2.write(string_of_text)
-                elif string_of_text == "":
-                    break
-
-    except FileNotFoundError:
-        print("Файл не найден, проверьте путь к файлу")
-    except PermissionError:
-        print("Нет прав на чтение файла.")
-
-
-filter_lines_to_new_file(file_1, "привет", file_2)
-
+# def filter_lines_to_new_file(file_path, keyword,output_path):
+#     try:
+#         with open(file_path, "r", encoding="utf-8") as f1, \
+#             open(output_path, "w", encoding="utf-8") as f2:
+#
+#             #чтение и обработка первого файла
+#             while True:
+#                 string_of_text = f1.readline()
+#
+#                 if keyword.lower() in string_of_text.lower():
+#                     #запись во второй файл
+#                     f2.write(string_of_text)
+#                 elif string_of_text == "":
+#                     break
+#
+#     except FileNotFoundError:
+#         print("Файл не найден, проверьте путь к файлу")
+#     except PermissionError:
+#         print("Нет прав на чтение файла.")
+#
+#
+# filter_lines_to_new_file(file_1, "привет", file_2)
+#
+# person = {
+#     "name": "Алиса",
+#     "age": 30,
+#     "skills": ["Python", "QA", "Selenium"],
+#     "active": True
+# }
+#
+#
+# def save_to_json(data, file_path):
+#     try:
+#         with open(file_path, "w", encoding="utf-8") as f1:
+#             json.dump(data, f1, indent=4, ensure_ascii=False)
+#
+#     except FileNotFoundError:
+#         print("Файл не найден, проверьте путь к файлу")
+#     except PermissionError:
+#         print("Нет прав на чтение файла.")
+#     except json.decoder.JSONDecodeError:
+#         print("Файл испорчен, или не json")
+#
+#
+# def load_from_json(file_path):
+#     try:
+#         with open(file_path, "r", encoding="utf-8") as f1:
+#             return json.load(f1)
+#
+#     except FileNotFoundError:
+#         print("Файл не найден, проверьте путь к файлу")
+#     except PermissionError:
+#         print("Нет прав на чтение файла.")
+#     except json.decoder.JSONDecodeError:
+#         print("Файл испорчен, или не json")
+#
+# save_to_json(person, file_3)
+# print(load_from_json(file_3))
