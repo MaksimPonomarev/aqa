@@ -321,8 +321,8 @@ file_3 = "C:/Users/mr/Desktop/test3.txt"
 #         print("Нет прав на чтение файла.")
 #     except json.decoder.JSONDecodeError:
 #         print("Файл испорчен, или не json")
-#
-#
+# #
+# #
 # def load_from_json(file_path):
 #     try:
 #         with open(file_path, "r", encoding="utf-8") as f1:
@@ -334,6 +334,55 @@ file_3 = "C:/Users/mr/Desktop/test3.txt"
 #         print("Нет прав на чтение файла.")
 #     except json.decoder.JSONDecodeError:
 #         print("Файл испорчен, или не json")
-#
+# #
 # save_to_json(person, file_3)
 # print(load_from_json(file_3))
+
+
+users = [
+    {"id": 1, "name": "Алиса", "role": "admin"},
+    {"id": 2, "name": "Боб", "role": "user"},
+    {"id": 3, "name": "Ева", "role": "moderator"}
+]
+new_user = [1,2,3,"efefef","efefef",3]
+# #
+def save_users_to_json(users_list, file_path):
+    try:
+        with open(file_path, "w", encoding="utf-8") as f1:
+            json.dump(users_list, f1, indent=4, ensure_ascii=False)
+
+
+    except FileNotFoundError as e:
+        print(f"Файл не найден, проверьте путь к файлу. | {e}")
+    except PermissionError as e:
+        print(f"Нет прав на чтение файла. | {e}")
+    except json.decoder.JSONDecodeError as e:
+        print(f"Файл испорчен, или не json. | {e}")
+    except AttributeError as e:
+        print(f"Передаешь обьект не того типа {e}")
+#
+#
+#
+save_users_to_json(users, file_3)
+# print(load_from_json(file_3))
+
+def add_user_to_json(new_user, file_path):
+    try:
+        with open(file_path, "r+", encoding="utf-8") as f1:
+            text_in_json = json.load(f1)
+            text_in_json.append(new_user)
+            print(text_in_json)
+            f1.truncate(0)
+            json.dump(text_in_json, f1, indent=4, ensure_ascii=False)
+
+    except FileNotFoundError as e:
+        print(f"Файл не найден, проверьте путь к файлу. | {e}")
+    except PermissionError as e:
+        print(f"Нет прав на чтение файла. | {e}")
+    except json.decoder.JSONDecodeError as e:
+        print(f"Файл испорчен, или не json. | {e}")
+    except AttributeError as e:
+        print(f"Передаешь обьект не того типа {e}")
+
+
+add_user_to_json(new_user, file_3)
