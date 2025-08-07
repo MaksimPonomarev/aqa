@@ -207,30 +207,212 @@
 
 
 #Задачи на словари
-person = {
-    "name": "Maksim",
-    "age": 20,
-    "city": "Moscow"
-}
-print(person["city"])
+# person = {
+#     "name": "Maksim",
+#     "age": 20,
+#     "city": "Moscow"
+# }
+# print(person["city"])
+#
+# user = {
+#     "login": "user123"
+# }
+#
+# user["email"] = "test@example.com"
+# user["login"] = "admin"
+#
+# data = {
+#     "x": 1,
+#     "y": 2
+# }
+# print(data.get("z", "Нет данных"))
+#
+# scores = {
+#     "Анна": 90,
+#     "Борис": 80,
+#     "Вера": 95
+# }
+# for key, values in scores.items():
+#     print(f"{key} получил(а) {values}")
+#
 
-user = {
-    "login": "user123"
-}
+# string_a = "hello"
+# dict_with_string = {}
+# for i in string_a:
+#     if i in dict_with_string.keys():
+#         dict_with_string[i] += 1
+#     else:
+#         dict_with_string[i] = 1
+#
+# print(dict_with_string)
+#
+# d = {"a": 1, "b": 2, "c": 3}
+# del d["b"]
+# print(d)
+# d = {"a": 1, "b": 2, "c": 3}
+# print(d.pop("b"))
 
-user["email"] = "test@example.com"
-user["login"] = "admin"
+# user = {
+#     "name": "Али",
+#     "profile": {
+#         "age": 30,
+#         "email": "ali@example.com"
+#     }
+# }
+#
+# print(user.get("name"))
+# print(user["profile"]["email"])
 
-data = {
-    "x": 1,
-    "y": 2
-}
-print(data.get("z", "Нет данных"))
 
-scores = {
-    "Анна": 90,
-    "Борис": 80,
-    "Вера": 95
-}
-for key, values in scores.items():
-    print(f"{key} получил(а) {values}")
+# groups = {
+#     "QA": ["Али", "Зара"],
+#     "Dev": ["Магомед", "Омар"]
+# }
+# a = " ".join(groups["QA"])
+# b = " ".join(groups["Dev"])
+# print(f"QA: {a}")
+# print(f"QA: {a} и Dev: {b}")
+#
+# users = [
+#     {"id": 1, "name": "Али"},
+#     {"id": 2, "name": "Зара"},
+#     {"id": 3, "name": "Омар"}
+# ]
+#
+# print(users[1]["name"])
+
+#
+# projects = {
+#     "P1": {"status": "done"},
+#     "P2": {"status": "in progress"},
+#     "P3": {"status": "done"},
+#     "P4": {"status": "in review"}
+# }
+# count = 0
+#
+# for key, value in projects.items():
+#     for key1, value1 in value.items():
+#         if value1.lower() == "done":
+#             count += 1
+#
+# print(count)
+
+#
+# user = {
+#     "name": "Али",
+#     "skills": ["Python", "Selenium", "Git"]
+# }
+#
+# user["skills"].append("Docker")
+# res = ", ".join(user["skills"])
+# print(res)
+
+
+#множества
+# a = [1, 2, 2, 3, 3, 3, 4]
+# print(list(set(a)))
+#
+# s = {1, 3, 5, 7}
+# if 5 in s:
+#     print("Есть")
+# else:
+#     print("Нет")
+
+# a = [1, 2, 3, 4]
+# b = [3, 4, 5, 6]
+# c = (set(a)).union(set(b))
+# print(c)
+# d = (set(a)).intersection(set(b))
+# print(d)
+
+# a = [1, 2, 3, 4, 5]
+# b = [4, 5, 6]
+# c = (set(a)).difference(set(b))
+# print(c)
+
+# a = {1, 2, 3}
+# b = {3, 4, 5}
+# c = (set(b)).symmetric_difference(set(a))
+# print(c)
+
+#frozenset
+# a = frozenset([1,2,3])
+# try:
+#     a.add(4)
+# except AttributeError as e:
+#     print(e)
+
+# a = frozenset([1, 2, 3])
+# b = frozenset([3, 4, 5])
+# c = a.intersection(b)
+# print(c)
+# d = a.symmetric_difference(b)
+# print(d)
+#а это нормально что тут такой вывод странный?
+
+# c = {
+#     frozenset([1, 2]): "двойка",
+#     frozenset([3, 4]): "четвёрка"
+# }
+#
+# print(c.get(frozenset([1,2])))
+
+
+#комбинирование структур данных
+# users = [
+#     {"name": "Али", "skills": ["Python", "Git"]},
+#     {"name": "Зара", "skills": ["Java", "Docker"]},
+#     {"name": "Магомед", "skills": ["Python", "Docker"]}
+# ]
+# set_skills = set()
+# for user in users:
+#     for skill in user["skills"]:
+#         set_skills.add(skill)
+#         if skill.lower() == "python":
+#             print(user.get("name"))
+# res = ", ".join(set_skills)
+#
+# print(res)
+
+#
+# groups = {
+#     "QA": ["Али", "Зара"],
+#     "Dev": ["Магомед", "Омар", "Иса"]
+# }
+# count = 0
+# for group, list_name in groups.items():
+#     count += len(list_name)
+#
+# print(count)
+
+# tests = [
+#     {"id": 1, "title": "Login test", "passed": True},
+#     {"id": 2, "title": "Logout test", "passed": False},
+#     {"id": 3, "title": "Profile test", "passed": True}
+# ]
+#
+# for test in tests:
+#     if test["passed"] == False:
+#         print(test["title"])
+
+
+#
+# projects = {
+#     "P1": {"api", "auth"},
+#     "P2": {"ui", "smoke"},
+#     "P3": {"api", "smoke"}
+# }
+#
+# for project, tags in projects.items():
+#     if "api" in tags:
+#         print(project)
+
+# runs = [
+#     {"test_id": 1, "status": "passed", "tags": {"smoke", "regression"}},
+#     {"test_id": 2, "status": "failed", "tags": {"api"}},
+#     {"test_id": 3, "status": "passed", "tags": {"ui", "smoke"}}
+# ]
+#
+# for run in runs:
+#     if run["status"] == "passed" and "smoke" in run["tags"]:
+#         print(run["test_id"])
