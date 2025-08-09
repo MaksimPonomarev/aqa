@@ -58,7 +58,6 @@ if change_film == "да":
     num_film = int(input("какой фильм хочешь менять? Укажи номер "))
     for index, mov in enumerate(list_mov):
         if index == num_film:
-            print("зашел во вложенный цикл")
             list_mov.pop(num_film)
             add_film = input("Какой фильм хочешь поставить на это место?")
             list_mov.insert(num_film - 1, add_film)
