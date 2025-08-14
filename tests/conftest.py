@@ -11,3 +11,16 @@ def yield_func():
 @pytest.fixture
 def global_data():
     return "данные для всех тестов"
+
+@pytest.fixture
+def numbers(request):
+    param = request.param
+    if param == "small":
+        return [1,2,3]
+    elif param == "empty":
+        return []
+    elif param == "neg":
+        return [-1,-2,-3]
+    else:
+        raise ValueError(f"Unknown param for 'numbers': {param}")
+
